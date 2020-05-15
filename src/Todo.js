@@ -35,7 +35,7 @@ function Todo() {
             onBlur={event => handleEdit(props.id, event.target.value)}/>
         <button 
             className="btn btn-danger btn-sm" 
-            onClick = {handleDelete} 
+            onClick = {handleDelete(props.id)} 
             style={{margin: 5}}>
         x</button>
       </div>
