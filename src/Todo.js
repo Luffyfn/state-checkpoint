@@ -35,7 +35,7 @@ function Todo() {
             onBlur={event => handleEdit(props.id, event.target.value)}/>
         <button 
             className="btn btn-danger btn-sm" 
-            onClick = {handleDelete(props.id)} 
+            onClick = {() => handleDelete(props.id)} 
             style={{margin: 5}}>
         x</button>
       </div>
@@ -44,7 +44,7 @@ function Todo() {
 
   const DisplayTasks = () => {
     return tasks.map((newTask, index) => {
-      return <Tasks content={newTask} key={index} id={index} />
+      return <Tasks content = {newTask} key = {index} id = {index} />
     })
   }
 
@@ -54,7 +54,7 @@ function Todo() {
         
         <DisplayTasks />
         
-        <form className = "form-inline" onSubmit = {handleSubmit}>
+        <form className = "form-inline" onSubmit = {(event) => handleSubmit(event)}>
             <input type="text" name="newTask" id="newTask" placeholder="Add new task" required/>
             <button className='btn btn-success btn-sm' style={{margin: 5}}>+</button>
         </form>
